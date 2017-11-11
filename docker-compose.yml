@@ -33,7 +33,7 @@ services:
       context: images/go
       args:
         - giturl=https://github.com/timmson/mbt-telegram-gw-go.git
-    expose:
-      - ["26080:8080"]
+    ports:
+      - "26080:8080"
     depends_on:
       - app
