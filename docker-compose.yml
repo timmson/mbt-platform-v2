@@ -1,9 +1,13 @@
 version: "3"
 services:
   platform:
+    image: platform
     build:
       context: images/platform
+      args:
+        - tag
   node:
+    image: node
     build:
       context: images/node
     depends_on:
