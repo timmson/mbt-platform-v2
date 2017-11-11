@@ -26,14 +26,22 @@ services:
 #    depends_on:
 #      - app
 
+  go:
+    image: go
+    hostname: go
+    build:
+      context: images/go
+    depends_on:
+      - app
+
   go-telegram-gw:
     image: go-telegram-gw
     hostname: tlgrm-gw-srv-01
     build:
-      context: images/go
+      context: images/go-app
       args:
         - giturl=https://github.com/timmson/mbt-telegram-gw-go.git
     ports:
       - "26080:8080"
     depends_on:
-      - app
+      - go
