@@ -6,7 +6,7 @@ services:
     build:
       context: images/platform
       args:
-        - timezone="Europe/Moscow"
+        - timezone=Europe/Moscow
 
   app:
     image: app
@@ -14,7 +14,7 @@ services:
     build:
       context: images/app
       args:
-        - username="user"
+        - username=user
     depends_on:
       - platform
 
@@ -32,6 +32,8 @@ services:
     build:
       context: images/go
       args:
-        - giturl="https://github.com/timmson/mbt-telegram-gw-go.git"
+        - giturl=https://github.com/timmson/mbt-telegram-gw-go.git
+    expose:
+      - ["26080:8080"]
     depends_on:
       - app
