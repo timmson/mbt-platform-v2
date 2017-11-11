@@ -6,36 +6,32 @@ services:
     build:
       context: images/platform
       args:
-        - tag
+        - timezone="Europe/Moscow"
 
   app:
     image: app
     hostname: app
     build:
       context: images/app
+      args:
+        - user="user"
     depends_on:
       - platform
 
-  node:
-    image: node
-    hostname: node
-    build:
-      context: images/node
-    depends_on:
-      - app
-
-  go:
-    image: go
-    hostname: go
-    build:
-      context: images/go
-    depends_on:
-      - app
+#  node:
+#    image: node
+#    hostname: node
+#    build:
+#      context: images/node
+#    depends_on:
+#      - app
 
   go-telegram-gw:
     image: go-telegram-gw
     hostname: tlgrm-gw-srv-01
     build:
-      context: images/go-telegram-gw
+      context: images/go
+      args:
+        - giturl="https://github.com/timmson/mbt-telegram-gw-go.git"
     depends_on:
-      - go
+      - app
