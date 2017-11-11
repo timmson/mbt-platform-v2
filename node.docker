@@ -7,6 +7,6 @@ ARG NODE_KEY_URL=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
 ARG NODE_DEB_URL=deb https://deb.nodesource.com/node_${NODE_VERSION} ${OS_RELEASE} main
 
 # Install essentials
-RUN wget -qO - ${NODE_KEY_URL} | apt-key add - &&
-    add-apt-repository ${NODE_DEB_URL} &&
+RUN wget -qO - ${NODE_KEY_URL} | apt-key add - && \
+    add-apt-repository ${NODE_DEB_URL} && \
     apt install -y nodejs
