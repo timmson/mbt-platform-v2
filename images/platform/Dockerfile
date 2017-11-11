@@ -4,7 +4,7 @@ MAINTAINER Krotov Artem <timmson666@mail.ru>
 ARG TIME_ZOME="Europe/Moscow"
 ARG SERVICE_USER="user"
 
-RUN apt install -y apt-transport-https
+RUN apt update && apt install -y apt-transport-https
 
 COPY sources.list /etc/apt/
 
