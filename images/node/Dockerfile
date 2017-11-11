@@ -1,12 +1,8 @@
 FROM platform
-MAINTAINER Krotov Artem <timmson666@mail.ru>
+LABEL maintaner="Krotov Artem <timmson666@mail.ru>"
 
-ARG OS_RELEASE = "$(lsb_release -cs)"
-ARG NODE_VERSION = "8.x"
-ARG NODE_KEY_URL = "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-ARG NODE_DEB_URL = "deb https://deb.nodesource.com/node_${NODE_VERSION} ${OS_RELEASE} main"
+ARG NODE_VERSION="8.x"
 
-# Install essentials
-RUN wget -qO - ${NODE_KEY_URL} | apt-key add - && \
-    add-apt-repository ${NODE_DEB_URL} && \
-    apt install -y nodejs
+RUN wget -qO - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
+        add-apt-repository 'deb https://deb.nodesource.com/node_'${NODE_VERSION}' '$(lsb_release -cs)' main' && \
+        apt install -y nodejs

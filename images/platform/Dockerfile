@@ -1,24 +1,21 @@
-FROM ubuntu
+FROM ubuntu:xenial
 MAINTAINER Krotov Artem <timmson666@mail.ru>
 
-ARG SERVICE_USER=user
+ARG TIME_ZOME="Europe/Moscow"
+ARG SERVICE_USER="user"
+
+COPY sources.list /etc/apt/
 
 # Install essentials
 RUN apt update && \
     apt dist-upgrade -y && \
-    apt install -y apt-transport-https python sudo supervisor vim cron tzdata && \
+    apt install -y apt-transport-https software-properties-common python-software-properties sudo vim cron tzdata wget && \
     apt autoremove && \
     apt clean
 
-# Create required directories
-RUN mkdir -p /var/log/supervisor
-
-# Copy supervisord.conf
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN ln -s /usr/share/zoneinfo/${TIME_ZOME} /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata
 
 # Add user account with sudo privileges
 RUN useradd ${SERVICE_USER} -s /bin/bash -G sudo -md /home/${SERVICE_USER} && \
     sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
-
-# Run supervisor
-CMD ["/usr/bin/supervisord"]

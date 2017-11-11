@@ -1,0 +1,13 @@
+deb https://mirror.yandex.ru/ubuntu/ xenial main restricted
+deb https://mirror.yandex.ru/ubuntu/ xenial universe
+deb https://mirror.yandex.ru/ubuntu/ xenial multiverse
+
+deb https://mirror.yandex.ru/ubuntu/ xenial-updates main restricted
+deb https://mirror.yandex.ru/ubuntu/ xenial-updates universe
+deb https://mirror.yandex.ru/ubuntu/ xenial-updates multiverse
+
+deb https://mirror.yandex.ru/ubuntu/ xenial-security main restricted
+deb https://mirror.yandex.ru/ubuntu/ xenial-security universe
+deb https://mirror.yandex.ru/ubuntu/ xenial-security multiverse
+
+deb http://archive.canonical.com/ubuntu xenial partner
