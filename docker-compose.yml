@@ -8,13 +8,21 @@ services:
       args:
         - tag
 
+  app:
+    image: app
+    hostname: app
+    build:
+      context: images/app
+    depends_on:
+      - platform
+
   node:
     image: node
     hostname: node
     build:
       context: images/node
     depends_on:
-      - platform
+      - app
 
   go:
     image: go
@@ -22,12 +30,12 @@ services:
     build:
       context: images/go
     depends_on:
-      - platform
+      - app
 
-#  go-telegram-gw:
-#    image: go-telegram-gw
-#    hostname: tlgrm-gw-srv-01
-#    build:
-#      context: images/go-telegram-gw
-#    depends_on:
-#      - go
+  go-telegram-gw:
+    image: go-telegram-gw
+    hostname: tlgrm-gw-srv-01
+    build:
+      context: images/go-telegram-gw
+    depends_on:
+      - go

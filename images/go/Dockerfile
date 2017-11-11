@@ -1,4 +1,4 @@
-FROM platform
+FROM app
 
 RUN add-apt-repository ppa:longsleep/golang-backports && \
         sudo apt-get update && \

@@ -1,4 +1,4 @@
-FROM platform
+FROM app
 
 ARG NODE_VERSION="8.x"
 
