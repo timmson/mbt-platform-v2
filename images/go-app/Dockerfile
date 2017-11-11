@@ -6,8 +6,8 @@ USER ${username}
 #Temp
 WORKDIR /app
 
-COPY . .
-
 RUN git clone ${giturl} .
+
+COPY . .
 
 CMD ["/app/run.sh"]
