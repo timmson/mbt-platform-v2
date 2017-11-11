@@ -14,7 +14,7 @@ services:
     build:
       context: images/app
       args:
-        - user="user"
+        - username="user"
     depends_on:
       - platform
 
