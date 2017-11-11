@@ -16,7 +16,8 @@ RUN apt update && \
     apt clean
 
 # Change time zone
-RUN ln -s /usr/share/zoneinfo/${TIME_ZOME} /etc/localtime && \
+RUN rm -rf /etc/localtime && \
+    ln -s /usr/share/zoneinfo/${TIME_ZOME} /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # Add user account with sudo privileges
