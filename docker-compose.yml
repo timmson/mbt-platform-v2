@@ -5,4 +5,6 @@ services:
       context: images/platform
   node:
     build:
-       context: images/node
+      context: images/node
+    depends_on:
+      - platform
