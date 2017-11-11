@@ -2,13 +2,32 @@ version: "3"
 services:
   platform:
     image: platform
+    hostname: platform
     build:
       context: images/platform
       args:
         - tag
+
   node:
     image: node
+    hostname: node
     build:
       context: images/node
     depends_on:
       - platform
+
+  go:
+    image: go
+    hostname: go
+    build:
+      context: images/go
+    depends_on:
+      - platform
+
+#  go-telegram-gw:
+#    image: go-telegram-gw
+#    hostname: tlgrm-gw-srv-01
+#    build:
+#      context: images/go-telegram-gw
+#    depends_on:
+#      - go

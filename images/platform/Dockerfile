@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Krotov Artem <timmson666@mail.ru>
+LABEL maintaner="Krotov Artem <timmson666@mail.ru>"
 
 ARG TIME_ZOME="Europe/Moscow"
 ARG SERVICE_USER="user"
