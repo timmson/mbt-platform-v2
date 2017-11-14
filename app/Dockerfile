@@ -1,6 +1,6 @@
 FROM platform
 
-ARG username
+ARG username="user"
 
 # Add user account with sudo privileges
 RUN useradd ${username} -s /bin/bash -G sudo -md /home/${username} && \
