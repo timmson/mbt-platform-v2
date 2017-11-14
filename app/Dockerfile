@@ -1,4 +1,4 @@
-FROM platform
+FROM timmson/mbt-platform-v2:platform
 
 ARG username="user"
 
