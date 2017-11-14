@@ -4,7 +4,7 @@ services:
     image: platform
     container_name: platform
     build:
-      context: images/platform
+      context: platform
       args:
         - timezone=Europe/Moscow
 
@@ -12,7 +12,7 @@ services:
     image: app
     container_name: app
     build:
-      context: images/app
+      context: app
       args:
         - username=user
     depends_on:
@@ -22,7 +22,7 @@ services:
     image: node
     container_name: node
     build:
-      context: images/node
+      context: node
     depends_on:
       - app
 
@@ -31,7 +31,7 @@ services:
     container_name: tlgrm-gw-srv-01
     restart: always
     build:
-      context: images/node-app
+      context: node-app
       args:
         - giturl=https://github.com/timmson/mbt-telegram-gw.git
     ports:
@@ -43,7 +43,7 @@ services:
     image: go
     container_name: go
     build:
-      context: images/go
+      context: go
     depends_on:
       - app
 
@@ -52,7 +52,7 @@ services:
     container_name: tlgrm-gw-srv-02
     restart: always
     build:
-      context: images/go-app
+      context: go-app
       args:
         - giturl=https://github.com/timmson/mbt-telegram-gw-go.git
     ports:
