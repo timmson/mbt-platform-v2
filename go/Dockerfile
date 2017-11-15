@@ -1,4 +1,4 @@
-FROM timmson/mbt-platform-v2:app
+FROM timmson/mbt-platform-v2:platform
 
 RUN add-apt-repository ppa:longsleep/golang-backports && \
         sudo apt-get update && \

@@ -1,4 +1,4 @@
-FROM timmson/mbt-platform-v2:app
+FROM timmson/mbt-platform-v2:platform
 
 ARG nodeVersion="8.x"
 
