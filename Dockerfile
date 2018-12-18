@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 LABEL maintaner="Krotov Artem <timmson666@mail.ru>"
 
 ARG timezone="Europe/Moscow"
@@ -16,6 +16,4 @@ RUN apt update && \
     apt clean
 
 # Change time zone
-RUN rm -rf /etc/localtime && \
-    ln -s /usr/share/zoneinfo/${timezone} /etc/localtime && \
-    dpkg-reconfigure --frontend noninteractive tzdata
+RUN timedatectl set-timezone${timezone}
