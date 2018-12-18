@@ -1,13 +1,13 @@
-deb https://mirror.yandex.ru/ubuntu/ xenial main restricted
-deb https://mirror.yandex.ru/ubuntu/ xenial universe
-deb https://mirror.yandex.ru/ubuntu/ xenial multiverse
+deb http://archive.ubuntu.com/ubuntu bionic main restricted
+deb http://archive.ubuntu.com/ubuntu bionic universe
+deb http://archive.ubuntu.com/ubuntu bionic multiverse
 
-deb https://mirror.yandex.ru/ubuntu/ xenial-updates main restricted
-deb https://mirror.yandex.ru/ubuntu/ xenial-updates universe
-deb https://mirror.yandex.ru/ubuntu/ xenial-updates multiverse
+deb http://archive.ubuntu.com/ubuntu bionic-updates main restricted
+deb http://archive.ubuntu.com/ubuntu bionic-updates universe
+deb http://archive.ubuntu.com/ubuntu bionic-updates multiverse
 
-deb https://mirror.yandex.ru/ubuntu/ xenial-security main restricted
-deb https://mirror.yandex.ru/ubuntu/ xenial-security universe
-deb https://mirror.yandex.ru/ubuntu/ xenial-security multiverse
+deb http://archive.ubuntu.com/ubuntu bionic-security main restricted
+deb http://archive.ubuntu.com/ubuntu bionic-security universe
+deb http://archive.ubuntu.com/ubuntu bionic-security multiverse
 
-deb http://archive.canonical.com/ubuntu xenial partner
+deb http://archive.canonical.com/ubuntu bionic partner
