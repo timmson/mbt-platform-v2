@@ -1,6 +1,6 @@
 FROM timmson/mbt-platform-v2:platform
 
-ARG nodeVersion="10.x"
+ARG nodeVersion="14.x"
 
 RUN wget -qO - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
         add-apt-repository 'deb https://deb.nodesource.com/node_'${nodeVersion}' '$(lsb_release -cs)' main' && \

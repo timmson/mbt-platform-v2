@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 LABEL maintaner="Krotov Artem <timmson666@mail.ru>"
 
 ARG timezone="Europe/Moscow"
