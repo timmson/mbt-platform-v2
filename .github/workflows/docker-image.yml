@@ -12,5 +12,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build the Docker Platform image
       run: docker build --tag timmson/mbt-platform-v2 .
+
+    - name: Build the Docker Java image
+      run: cd java && docker build --tag timmson/mbt-platform-v2:java .
+
+    - name: Build the Docker NodeJs image
+      run: cd node && docker build --tag timmson/mbt-platform-v2:node .
