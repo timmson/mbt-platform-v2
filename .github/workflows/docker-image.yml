@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Docker Platform image
-      run: docker build --tag timmson/mbt-platform-v2 .
+      run: docker build -t timmson/mbt-platform-v2:platform .
 
     - name: Build the Docker Java image
-      run: cd java && docker build --tag timmson/mbt-platform-v2:java .
+      run: docker build -t timmson/mbt-platform-v2:java java/.
 
     - name: Build the Docker NodeJs image
-      run: cd node && docker build --tag timmson/mbt-platform-v2:node .
+      run: docker build -t timmson/mbt-platform-v2:node node/.

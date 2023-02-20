@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM --platform=linux/amd64 ubuntu:jammy
 LABEL maintaner="Krotov Artem <timmson666@mail.ru>"
 
 ARG timezone="Europe/Moscow"
